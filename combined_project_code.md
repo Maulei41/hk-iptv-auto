@@ -1,5 +1,5 @@
 # Complete Project Codebase
-Generated on: Sun Jun 28 17:12:44 UTC 2026
+Generated on: Sun Jun 28 17:47:41 UTC 2026
 
 ## File: README.md
 ````md
@@ -19,8 +19,8 @@ Generated on: Sun Jun 28 17:12:44 UTC 2026
 
 | 線路 | 鏈接 (URL) | 推薦度 |
 | :--- | :--- | :--- |
-| **CDN 加速 (推薦)** | `https://raw.gh.registry.cyou/Maulei41/hk-iptv-auto/refs/heads/main/hk_live.m3u` | ⭐⭐⭐⭐⭐ |
-| **GitHub Raw** | `https://raw.githubusercontent.com/Maulei411/hk-iptv-auto/refs/heads/main/hk_live.m3u` | ⭐⭐⭐ |
+| **CDN 加速 (推薦)** | `https://raw.gh.registry.cyou/----/hk-iptv-auto/refs/heads/main/hk_live.m3u` | ⭐⭐⭐⭐⭐ |
+| **GitHub Raw** | `[https://raw.githubusercontent.com/Maulei411/hk-iptv-auto/refs/heads/main/hk_live.m3u](https://raw.githubusercontent.com/Maulei41/hk-iptv-auto/refs/heads/main/hk_live.m3u)` | ⭐⭐⭐ |
 
 > ⚡ **CDN 加速服務由 [cmliussss](https://blog.cmliussss.com/) 提供，特此感謝！**
 > 
