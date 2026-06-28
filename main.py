@@ -129,6 +129,10 @@ def fetch_and_parse():
                         current_name = converted_name.replace('臺', '台')
                         
                 elif line.startswith("http") and current_name:
+                    # 去除 URL 中的 $ 標註語法 (特定播放器自訂線路名稱)
+                    # 例如: .../stream.m3u8$LR•IPV4『线路16』 → .../stream.m3u8
+                    clean_url = line.split('$')[0]
+
                     # 1. 黑名單檢查
                     if any(b.lower() in current_name.lower() for b in BLOCK_KEYWORDS):
                         current_name = ""
@@ -137,8 +141,8 @@ def fetch_and_parse():
                     # 2. 白名單檢查
                     if any(cc.convert(k).replace('臺', '台').lower() in current_name.lower() for k in KEYWORDS):
                         # 去重
-                        if not any(c['url'] == line for c in found_channels):
-                            found_channels.append({"name": current_name, "url": line})
+                        if not any(c['url'] == clean_url for c in found_channels):
+                            found_channels.append({"name": current_name, "url": clean_url})
                             count_added += 1
                     current_name = "" # 重置
             
