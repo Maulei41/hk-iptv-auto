@@ -28,10 +28,16 @@ jobs:
     - name: Run script
       run: python main.py
 
+    - name: Fetch EPG (XMLTV)
+      run: |
+        curl -sL -o epg-hk.xml.gz "https://epg.pw/xmltv/epg_HK.xml.gz" || \
+        curl -sL -o epg-hk.xml.gz "https://raw.githubusercontent.com/zzq1234567890/epg/refs/heads/main/twepg.xml.gz" || \
+        echo "⚠️ Both EPG sources failed"
+
     - name: Commit and push
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add hk_live.m3u
-        git commit -m "Auto-update channel list" || echo "No changes to commit"
+        git add hk_live.m3u epg-hk.xml.gz
+        git commit -m "Auto-update channel list and EPG" || echo "No changes to commit"
         git push
